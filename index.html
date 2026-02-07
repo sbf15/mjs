@@ -22,42 +22,42 @@ body{
 
 /* HERO */
 header{
-  height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-    url("p5.jpg") center/cover no-repeat;
+  height:60vh;
+  min-height:300px;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("p5.jpg") center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   color:white;
+  padding:20px;
 }
 
 header h1{
   font-family:'Great Vibes', cursive;
-  font-size:3.5rem;
+  font-size:3rem;
 }
 
 header p{
   font-size:1.2rem;
-  margin-top:15px;
+  margin-top:10px;
 }
 
 /* SECTION */
 section{
-  padding:40px 20px;
-  max-width:1400px;
+  padding:30px 10px;
+  max-width:1200px;
   margin:auto;
 }
 
 .title{
   text-align:center;
-  margin-bottom:40px;
+  margin-bottom:30px;
 }
 
 .title h2{
   font-family:'Playfair Display', serif;
-  font-size:2.3rem;
+  font-size:2rem;
   color:#270714;
 }
 
@@ -66,15 +66,15 @@ section{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:20px;
-  height:80vh; /* full height */
-  max-height:700px;
+  gap:10px;
+  flex-wrap:wrap;
 }
 
-/* SIDE PHOTOS FULL HEIGHT - FIXED */
+/* SIDE PHOTOS FULL HEIGHT */
 .side-photo{
-  flex:1;
-  height:100%;
+  flex:1 1 20%;
+  max-width:200px;
+  height:auto;
   overflow:hidden;
   border-radius:16px;
   display:flex;
@@ -83,17 +83,18 @@ section{
 }
 
 .side-photo img{
-  width:auto;     /* auto width */
-  height:100%;    /* full container height */
-  object-fit:contain;  /* fit without cropping */
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  border-radius:16px;
 }
 
 /* FLIPBOOK */
 .book{
-  width:25vw; /* responsive width */
-  min-width:300px;
+  flex:1 1 50%;
   max-width:400px;
-  height:100%;
+  height:auto;
+  aspect-ratio: 3/4; /* maintain album ratio */
   position:relative;
   perspective:1800px;
   cursor:pointer;
@@ -127,14 +128,14 @@ section{
   justify-content:center;
   text-align:center;
   font-family:'Playfair Display', serif;
-  font-size:22px;
+  font-size:1.2rem;
   padding:20px;
 }
 
 .page.cover small{
   display:block;
-  margin-top:12px;
-  font-size:14px;
+  margin-top:8px;
+  font-size:12px;
 }
 
 /* FLIP */
@@ -144,53 +145,46 @@ section{
 
 .hint{
   text-align:center;
-  margin-top:25px;
-  color:#eee;
+  margin-top:20px;
+  color:#fff;
   font-size:14px;
 }
 
 /* MESSAGE */
 .message{
   background:#f4b0c4;
-  padding:40px;
+  padding:30px 15px;
   border-radius:20px;
   text-align:center;
 }
 
 .message p{
-  font-size:1.1rem;
-  line-height:1.9;
+  font-size:1rem;
+  line-height:1.6;
 }
 
 /* FOOTER */
 footer{
   text-align:center;
-  padding:20px;
+  padding:15px;
   background:#c2185b;
   color:white;
-  margin-top:50px;
+  margin-top:30px;
+  font-size:14px;
 }
 
 /* RESPONSIVE */
-@media(max-width:1200px){
-  .side-photo{
-    display:none; /* hide side images on small screens */
-  }
-  .album-wrapper{
-    justify-content:center;
-  }
-}
-
 @media(max-width:768px){
+  .album-wrapper{
+    flex-direction:column;
+    gap:15px;
+  }
+  .side-photo{
+    display:none; /* hide side images on phones */
+  }
   .book{
-    width:60vw;
-    min-width:250px;
-  }
-  section{
-    padding:20px 10px;
-  }
-  .message{
-    padding:20px;
+    width:90%;
+    max-width:350px;
   }
 }
 </style>
@@ -202,7 +196,7 @@ footer{
 <header>
   <div>
     <h1>Happy Anniversary ❤️</h1>
-    
+    <p>From your wife, with all my love</p>
   </div>
 </header>
 
@@ -214,7 +208,7 @@ footer{
 
   <div class="album-wrapper">
 
-    <!-- LEFT PHOTO FULL HEIGHT -->
+    <!-- LEFT PHOTO -->
     <div class="side-photo">
       <img src="left.jpg" alt="Left Side Image">
     </div>
@@ -248,7 +242,7 @@ footer{
 
     </div>
 
-    <!-- RIGHT PHOTO FULL HEIGHT -->
+    <!-- RIGHT PHOTO -->
     <div class="side-photo">
       <img src="right.jpg" alt="Right Side Image">
     </div>
@@ -259,12 +253,18 @@ footer{
 </section>
 
 <!-- MESSAGE -->
-<section> <div class="message"> <p> My Dear Husband 💕<br>
-   <br> Every day with you feels like a blessing. From the moment we became one, my life has been filled with love, strength, and peace.<br>
-  <br> This little album is my way of saying thank you for being my partner, my support, and my forever.<br>
-  <br> Happy Anniversary ❤️<br> — Your Wife </p> 
-</div> 
+<section>
+  <div class="message">
+    <p>
+      My Dear Husband 💕<br><br>
+      Every day with you feels like a blessing. From the moment we became one, my life has been filled with love, strength, and peace.<br><br>
+      This little album is my way of saying thank you for being my partner, my support, and my forever.<br><br>
+      Happy Anniversary ❤️<br>
+      — Your Wife
+    </p>
+  </div>
 </section>
+
 <footer>
   Made with ❤️ by your wife, just for you
 </footer>

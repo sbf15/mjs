@@ -67,18 +67,17 @@ section {
 /* ALBUM LAYOUT */
 .album-wrapper {
   display: flex;
-  align-items: stretch;
+  align-items: stretch; /* ensure side images match album height */
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
 }
 
-/* SIDE PHOTOS MATCH ALBUM HEIGHT */
+/* SIDE PHOTOS SAME HEIGHT AS ALBUM */
 .side-photo {
   flex: 1 1 20%;
-  max-width: 200px;
   display: flex;
-  align-items: stretch;
+  align-items: stretch; 
   justify-content: center;
 }
 
@@ -185,6 +184,7 @@ footer {
   .album-wrapper {
     flex-direction: column;
     gap: 15px;
+    align-items: center; /* center album and side images */
   }
   .book {
     width: 90%;
@@ -193,7 +193,7 @@ footer {
   .side-photo {
     width: 90%;
     max-width: none;
-    height: 200px; /* fixed height for mobile side images */
+    height: 200px;
   }
   .side-photo img {
     height: 100%;
@@ -207,7 +207,7 @@ footer {
 <!-- HERO -->
 <header>
   <h1>Happy Anniversary ❤️</h1>
-  
+ 
 </header>
 
 <!-- FLIPBOOK -->

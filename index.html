@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Husband 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins', sans-serif;
+  background:#e94e6d;
+  color:#333;
+}
+
+/* HERO */
+header{
+  height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("images/p5.jpg") center/cover no-repeat; /* ✅ FIRST IMAGE */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding:20px;
+}
+
+header h1{
+  font-family:'Great Vibes', cursive;
+  font-size:3.5rem;
+}
+
+header p{
+  font-size:1.2rem;
+  margin-top:15px;
+  letter-spacing:1px;
+}
+
+/* SECTION */
+section{
+  padding:60px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.title h2{
+  font-family:'Playfair Display', serif;
+  font-size:2.3rem;
+  color:#270714;
+}
+
+/* FLIPBOOK */
+.flip-container{
+  display:flex;
+  justify-content:center;
+}
+
+.book{
+  width:320px;
+  height:450px;
+  position:relative;
+  perspective:1800px;
+  cursor:pointer;
+}
+
+/* PAGE */
+.page{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgb(67, 2, 2);
+  transform-origin:left;
+  transition:transform 1s ease;
+  box-shadow:0 12px 30px rgba(0,0,0,0.25);
+  backface-visibility:hidden;
+  transform-style:preserve-3d;
+}
+
+.page img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* COVER */
+.page.cover{
+  background:linear-gradient(135deg, #57044a, #6be2ef);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-family:'Playfair Display', serif;
+  font-size:22px;
+  padding:20px;
+}
+
+.page.cover small{
+  display:block;
+  margin-top:12px;
+  font-size:14px;
+  letter-spacing:1px;
+}
+
+/* FLIP */
+.page.flipped{
+  transform:rotateY(-180deg);
+}
+
+.hint{
+  text-align:center;
+  margin-top:20px;
+  color:#666;
+  font-size:14px;
+}
+
+/* MESSAGE */
+.message{
+  background:#f4b0c4;
+  padding:40px;
+  border-radius:20px;
+  text-align:center;
+}
+
+.message p{
+  font-size:1.1rem;
+  line-height:1.9;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#c2185b;
+  color:white;
+  margin-top:50px;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<header>
+  <div>
+    <h1>Happy Anniversary ❤️</h1>
+    <p>From your wife, with all my love</p>
+  </div>
+</header>
+
+<!-- FLIPBOOK -->
+<section>
+  <div class="title">
+    <h2>Our Love Story</h2>
+  </div>
+
+  <div class="flip-container">
+    <div class="book" id="book">
+
+      <!-- FRONT COVER -->
+      <div class="page cover">
+        <div>
+          To My Husband 💖<br>
+          <small>A small surprise from your wife</small>
+        </div>
+      </div>
+
+      <!-- PHOTOS -->
+      <div class="page"><img src="images/p1.jpg"></div>
+      <div class="page"><img src="images/p2.jpg"></div>
+      <div class="page"><img src="images/p3.jpg"></div>
+      <div class="page"><img src="images/p4.jpg"></div>
+
+      <!-- LAST PAGE -->
+      <div class="page cover">
+        <div>
+          Forever Yours ❤️<br>
+          <small>Happy Anniversary, My Love</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="hint">Tap the album to turn pages ➡️</div>
+</section>
+
+<!-- MESSAGE -->
+<section>
+  <div class="message">
+    <p>
+      My Dear Husband 💕<br><br>
+      Every day with you feels like a blessing.
+      From the moment we became one, my life
+      has been filled with love, strength, and peace.<br><br>
+
+      This little album is my way of saying
+      thank you for being my partner,
+      my support, and my forever.<br><br>
+
+      Happy Anniversary ❤️<br>
+      — Your Wife
+    </p>
+  </div>
+</section>
+
+<footer>
+  Made with ❤️ by your wife, just for you
+</footer>
+
+<script>
+const pages = document.querySelectorAll('.page');
+let currentPage = 0;
+
+/* SET STACK ORDER */
+pages.forEach((page, index) => {
+  page.style.zIndex = pages.length - index;
+});
+
+/* FLIP */
+document.getElementById('book').addEventListener('click', () => {
+  if (currentPage < pages.length) {
+    pages[currentPage].classList.add('flipped');
+    currentPage++;
+  }
+});
+</script>
+
+</body>
+</html>

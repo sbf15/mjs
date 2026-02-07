@@ -23,10 +23,9 @@ body {
 /* HERO */
 header {
   width: 100%;
-  height: 50vh;
-  min-height: 250px;
-  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-              url("p5.jpg") top/cover no-repeat;
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("p5.jpg") center/contain no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +33,19 @@ header {
   text-align: center;
   color: white;
   padding: 20px;
-  background-position-y: top; /* ✅ Show top of image */
+  min-height: 50vh;
+}
+
+/* To make the hero take full image height while keeping aspect ratio */
+header::after {
+  content: "";
+  display: block;
+  padding-bottom: 56.25%; /* 16:9 ratio to maintain image */
+}
+
+/* Hero text overlay */
+header .text {
+  position: absolute;
 }
 
 header h1 {
@@ -68,7 +79,7 @@ section {
 /* ALBUM LAYOUT */
 .album-wrapper {
   display: flex;
-  align-items: stretch; 
+  align-items: stretch;
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
@@ -200,7 +211,9 @@ footer {
     height: 100%;
   }
   header {
-    height: 40vh;
+    height: auto;
+    min-height: 250px;
+    background-size: cover;
   }
 }
 </style>
@@ -210,8 +223,10 @@ footer {
 
 <!-- HERO -->
 <header>
-  <h1>Happy Anniversary ❤️</h1>
-  
+  <div class="text">
+    <h1>Happy Anniversary ❤️</h1>
+   
+  </div>
 </header>
 
 <!-- FLIPBOOK -->

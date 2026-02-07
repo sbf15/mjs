@@ -26,7 +26,7 @@ header {
   height: 50vh;
   min-height: 250px;
   background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-              url("p5.jpg") center/cover no-repeat;
+              url("p5.jpg") top/cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,6 +34,7 @@ header {
   text-align: center;
   color: white;
   padding: 20px;
+  background-position-y: top; /* ✅ Show top of image */
 }
 
 header h1 {
@@ -67,7 +68,7 @@ section {
 /* ALBUM LAYOUT */
 .album-wrapper {
   display: flex;
-  align-items: stretch; /* ensure side images match album height */
+  align-items: stretch; 
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
@@ -198,6 +199,9 @@ footer {
   .side-photo img {
     height: 100%;
   }
+  header {
+    height: 40vh;
+  }
 }
 </style>
 </head>
@@ -207,7 +211,7 @@ footer {
 <!-- HERO -->
 <header>
   <h1>Happy Anniversary ❤️</h1>
- 
+  
 </header>
 
 <!-- FLIPBOOK -->

@@ -8,183 +8,195 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-  font-family:'Poppins', sans-serif;
-  background:#e94e6d;
-  color:#333;
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #e94e6d;
+  color: #333;
 }
 
 /* HERO */
-header{
-  height:60vh;
-  min-height:300px;
-  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("p5.jpg") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-  padding:20px;
+header {
+  width: 100%;
+  height: 50vh;
+  min-height: 250px;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+              url("p5.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
 }
 
-header h1{
-  font-family:'Great Vibes', cursive;
-  font-size:3rem;
+header h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
 }
 
-header p{
-  font-size:1.2rem;
-  margin-top:10px;
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
 }
 
 /* SECTION */
-section{
-  padding:30px 10px;
-  max-width:1200px;
-  margin:auto;
+section {
+  padding: 30px 10px;
+  max-width: 1400px;
+  margin: auto;
 }
 
-.title{
-  text-align:center;
-  margin-bottom:30px;
+.title {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.title h2{
-  font-family:'Playfair Display', serif;
-  font-size:2rem;
-  color:#270714;
+.title h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #270714;
 }
 
 /* ALBUM LAYOUT */
-.album-wrapper{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
+.album-wrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-/* SIDE PHOTOS FULL HEIGHT */
-.side-photo{
-  flex:1 1 20%;
-  max-width:200px;
-  height:auto;
-  overflow:hidden;
-  border-radius:16px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+/* SIDE PHOTOS MATCH ALBUM HEIGHT */
+.side-photo {
+  flex: 1 1 20%;
+  max-width: 200px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
 }
 
-.side-photo img{
-  width:100%;
-  height:auto;
-  object-fit:contain;
-  border-radius:16px;
+.side-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
 /* FLIPBOOK */
-.book{
-  flex:1 1 50%;
-  max-width:400px;
-  height:auto;
-  aspect-ratio: 3/4; /* maintain album ratio */
-  position:relative;
-  perspective:1800px;
-  cursor:pointer;
+.book {
+  flex: 1 1 50%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 3/4; 
+  position: relative;
+  perspective: 1800px;
+  cursor: pointer;
 }
 
 /* PAGE */
-.page{
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:#430202;
-  transform-origin:left;
-  transition:transform 1s ease;
-  box-shadow:0 12px 30px rgba(0,0,0,0.25);
-  backface-visibility:hidden;
-  transform-style:preserve-3d;
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #430202;
+  transform-origin: left;
+  transition: transform 1s ease;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
-.page img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* COVER */
-.page.cover{
-  background:linear-gradient(135deg, #57044a, #6be2ef);
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  font-family:'Playfair Display', serif;
-  font-size:1.2rem;
-  padding:20px;
+.page.cover {
+  background: linear-gradient(135deg, #57044a, #6be2ef);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  padding: 20px;
 }
 
-.page.cover small{
-  display:block;
-  margin-top:8px;
-  font-size:12px;
+.page.cover small {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
 }
 
 /* FLIP */
-.page.flipped{
-  transform:rotateY(-180deg);
+.page.flipped {
+  transform: rotateY(-180deg);
 }
 
-.hint{
-  text-align:center;
-  margin-top:20px;
-  color:#fff;
-  font-size:14px;
+.hint {
+  text-align: center;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 14px;
 }
 
 /* MESSAGE */
-.message{
-  background:#f4b0c4;
-  padding:30px 15px;
-  border-radius:20px;
-  text-align:center;
+.message {
+  background: #f4b0c4;
+  padding: 30px 15px;
+  border-radius: 20px;
+  text-align: center;
 }
 
-.message p{
-  font-size:1rem;
-  line-height:1.6;
+.message p {
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* FOOTER */
-footer{
-  text-align:center;
-  padding:15px;
-  background:#c2185b;
-  color:white;
-  margin-top:30px;
-  font-size:14px;
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #c2185b;
+  color: white;
+  margin-top: 30px;
+  font-size: 14px;
 }
 
 /* RESPONSIVE */
-@media(max-width:768px){
-  .album-wrapper{
-    flex-direction:column;
-    gap:15px;
+@media(max-width: 1200px) {
+  .side-photo {
+    flex: 1 1 15%;
+    max-width: 150px;
   }
-  .side-photo{
-    display:none; /* hide side images on phones */
+}
+
+@media(max-width: 768px){
+  .album-wrapper {
+    flex-direction: column;
+    gap: 15px;
   }
-  .book{
-    width:90%;
-    max-width:350px;
+  .book {
+    width: 90%;
+    max-width: 350px;
+  }
+  .side-photo {
+    width: 90%;
+    max-width: none;
+    height: 200px; /* fixed height for mobile side images */
+  }
+  .side-photo img {
+    height: 100%;
   }
 }
 </style>
@@ -194,10 +206,8 @@ footer{
 
 <!-- HERO -->
 <header>
-  <div>
-    <h1>Happy Anniversary ❤️</h1>
-    <p>From your wife, with all my love</p>
-  </div>
+  <h1>Happy Anniversary ❤️</h1>
+  
 </header>
 
 <!-- FLIPBOOK -->
